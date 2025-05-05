@@ -9,23 +9,33 @@ This project aims to predict whether a student will drop out or successfully com
 
 ## 🧰 Tools & Techniques
 
-- Python, Scikit-Learn
+- Python (Pandas, NumPy, Scikit-Learn, Matplotlib)
 - Decision Tree, Naive Bayes, k-NN, Random Forest
 - Cross-Validation
 - ONNX model export
 
-## 📊 Key Results
+## 📊 Key Results & Model Comparison
 
-- Best-performing model: Random Forest (F1-Score: 0.88)
-- Cross-validated accuracy: 91%
-- Model exported as ONNX (`best_model.onnx`) for deployment use
+After training and cross-validating several models, the following insights were gained:
+
+- **Random Forest** achieved the highest mean accuracy (76.55%) and F1 score (66.14%), making it the best overall performer.
+- **Consistency**: Random Forest also showed the lowest standard deviations across folds, indicating robust performance.
+- **Naive Bayes** performed reasonably, but had the highest variability (least consistent).
+- **k-Nearest Neighbors (k-NN)** ranked mid-level in both accuracy and consistency.
+- **Decision Tree** had decent performance, more consistent than Naive Bayes, but less than Random Forest.
+
+### 🔍 Conclusion:
+> Random Forest is the most promising model due to its balance of performance and stability. However, model selection should always align with the specific goals of deployment. Further tuning and domain-specific evaluation are recommended.
+
+Confusion matrices and classification reports are included in the notebook to explore error types in more detail.
+
 
 ## 📁 Project Files
 
 - `Project_2_student_drop_out_classifier.ipynb`: Full notebook incl. preprocessing, training & evaluation
 - `student_data.csv`: Cleaned dataset
 - `best_model.onnx`: Final exportable model
-- `visuals/`: Optional plots (confusion matrix, accuracy, feature importance)
+
 
 ## 🔎 Learnings
 
